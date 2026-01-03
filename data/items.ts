@@ -8334,7 +8334,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		forcedForme: "Venomicon-Epilogue",
 		itemUser: ["Venomicon-Epilogue"],
-		num: -3,
+		num: -2,
 		gen: 8,
 		isNonstandard: "CAP",
 	},
@@ -8343,7 +8343,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 
 	pharaoniccrown: {
 		name: "Pharaonic Crown",
-		spritenum: 0,
+		spritenum: 236,
 		fling: {
 			basePower: 80,
 		},
@@ -8352,7 +8352,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return this.chainModify(1.5);
 		},
 		
-		num: -2,
+		num: -100,
 		gen: 8,
 	}
 };
