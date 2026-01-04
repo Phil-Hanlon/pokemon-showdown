@@ -2553,4 +2553,14 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 		name: "Pharaonic Crown",
 		shortDesc: "Holder's Sp. Def is 1.5x, but most holders lose 1/8 max HP each turn.",
 	},
+
+	bookofheroes: {
+		name: "Book of Heroes",
+		shortDesc: "Trainer blacks out when holder faints."
+	},
+
+	heartofdarkness: {
+		name: "Heart of Darkness",
+		shortDesc: "Holder cannot switch out or flee."
+	}
 };

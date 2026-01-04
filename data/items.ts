@@ -8354,5 +8354,27 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		
 		num: -100,
 		gen: 8,
+	},
+
+	bookofheroes: {
+		name: "Book of Heroes",
+		spritenum: 0,
+		fling: {
+			basePower: 80,
+		},
+
+		num: -101,
+		gen: 8,
+	},
+
+	heartofdarkness: {
+		name: "Heart of Darkness",
+		spritenum: 0,
+		fling: {
+			basePower: 80,
+		},
+
+		num: -102,
+		gen: 8,
 	}
 };
