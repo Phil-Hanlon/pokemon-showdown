@@ -8371,6 +8371,15 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		// Item activation located in scripts.js
 		// Check all places where "bluncerpolicy" is referenced
+
+		// Mimics Wide Lens accuracy modification
+		// 3277 / 4096 = 0.8
+		onSourceModifyAccuracyPriority: -2,
+		onSourceModifyAccuracy(accuracy) {
+			if (typeof accuracy === 'number') {
+				return this.chainModify([3277, 4096]);
+			}
+		},
 		num: -102,
 		gen: 8,
 	},
