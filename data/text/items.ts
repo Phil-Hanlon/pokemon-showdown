@@ -2549,18 +2549,23 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 
 	// Light and Dark items
 
-	pharaoniccrown: {
-		name: "Pharaonic Crown",
-		shortDesc: "Holder's Sp. Def is 1.5x, but most holders lose 1/8 max HP each turn.",
-	},
-
 	bookofheroes: {
 		name: "Book of Heroes",
-		shortDesc: "Trainer blacks out when holder faints."
+		shortDesc: "Trainer blacks out when holder faints.",
 	},
 
 	heartofdarkness: {
 		name: "Heart of Darkness",
-		shortDesc: "Holder cannot switch out or flee."
+		shortDesc: "Holder cannot switch out or flee.",
+	},
+
+	amuletoffury: {
+		name: "Amulet of Fury",
+		shortDesc: "If the holder misses due to accuracy, its Atk. is raised by 1 stage. The accuracy of attacks by the holder is 0.8x.",
+	},
+
+	pharaoniccrown: {
+		name: "Pharaonic Crown",
+		shortDesc: "Holder's Sp. Def is 1.5x, but most holders lose 1/16 max HP each turn.",
 	}
 };

@@ -1111,6 +1111,10 @@ export const Scripts: ModdedBattleScriptsData = {
 					if (!move.ohko && pokemon.hasItem('blunderpolicy') && pokemon.useItem()) {
 						this.battle.boost({ spe: 2 }, pokemon);
 					}
+					// Light and Dark
+					if (!move.ohko && pokemon.hasItem('amuletoffury') && pokemon.useItem()) {
+						this.battle.boost({ atk: 1 }, pokemon);
+					}
 					hitResults[i] = false;
 					continue;
 				}

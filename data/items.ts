@@ -8341,21 +8341,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 
 	// Light and Dark items
 
-	pharaoniccrown: {
-		name: "Pharaonic Crown",
-		spritenum: 236,
-		fling: {
-			basePower: 80,
-		},
-		onModifySpDPriority: 1,
-		onModifySpD(spd) {
-			return this.chainModify(1.5);
-		},
-		
-		num: -100,
-		gen: 8,
-	},
-
 	bookofheroes: {
 		name: "Book of Heroes",
 		spritenum: 0,
@@ -8363,7 +8348,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			basePower: 80,
 		},
 
-		num: -101,
+		num: -100,
 		gen: 8,
 	},
 
@@ -8374,7 +8359,39 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			basePower: 80,
 		},
 
+		num: -101,
+		gen: 8,
+	},
+
+	amuletoffury: {
+		name: "Amulet of Fury",
+		spritenum: 0,
+		fling: {
+			basePower: 80,
+		},
+		// Item activation located in scripts.js
+		// Check all places where "bluncerpolicy" is referenced
 		num: -102,
 		gen: 8,
-	}
+	},
+	
+	pharaoniccrown: {
+		name: "Pharaonic Crown",
+		spritenum: 236,
+		fling: {
+			basePower: 80,
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 16);
+		},
+		onModifySpDPriority: 1,
+		onModifySpD(spd) {
+			return this.chainModify(1.5);
+		},
+		
+		num: -103,
+		gen: 8,
+	}	
 };
