@@ -8348,6 +8348,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			basePower: 80,
 		},
 
+		// Unimplemented
+
 		num: -100,
 		gen: 8,
 	},
@@ -8358,6 +8360,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		fling: {
 			basePower: 80,
 		},
+
+		// Unimplemented
 
 		num: -101,
 		gen: 8,
@@ -8370,7 +8374,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			basePower: 80,
 		},
 		// Item activation located in scripts.js
-		// Check all places where "bluncerpolicy" is referenced
+		// Check all places where "blunderpolicy" is referenced
+		
 
 		// Mimics Wide Lens accuracy modification
 		// 3277 / 4096 = 0.8
@@ -8380,6 +8385,21 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 				return this.chainModify([3277, 4096]);
 			}
 		},
+
+		// Mimics Life Orb recoil to boost attack on miss
+		onAfterMoveSecondarySelf(source, target, move) {
+			if (source && source !== target && move && !source.forceSwitchFlag) {
+				this.damage(source.baseMaxhp / 10, source, source, this.dex.items.get('lifeorb'));
+
+				
+			}
+		},
+
+		// Mimics Weakness Policy
+		boosts: {
+			atk: 1,
+		},
+		
 		num: -102,
 		gen: 8,
 	},
@@ -8390,11 +8410,15 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		fling: {
 			basePower: 80,
 		},
+
+		// Mimics Spiky Barb DoT
 		onResidualOrder: 28,
 		onResidualSubOrder: 3,
 		onResidual(pokemon) {
 			this.damage(pokemon.baseMaxhp / 16);
 		},
+
+		//Mimics Assault Vest Sp. Def boost
 		onModifySpDPriority: 1,
 		onModifySpD(spd) {
 			return this.chainModify(1.5);
