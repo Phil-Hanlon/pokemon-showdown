@@ -301,6 +301,7 @@ export class Pokemon {
 	m: {
 		innate?: string, // Partners in Crime
 		originalSpecies?: string, // Mix and Mega
+		canAscend?: string | false | null | undefined, // Light and Dark
 		[key: string]: any,
 	};
 

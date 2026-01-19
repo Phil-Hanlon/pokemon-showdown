@@ -8372,10 +8372,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		spritenum: 0,
 		fling: {
 			basePower: 80,
-		},
-		// Item activation located in scripts.js
-		// Check all places where "blunderpolicy" is referenced
-		
+		},		
 
 		// Mimics Wide Lens accuracy modification
 		// 3277 / 4096 = 0.8
@@ -8386,18 +8383,16 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			}
 		},
 
-		// Mimics Life Orb recoil to boost attack on miss
-		onAfterMoveSecondarySelf(source, target, move) {
-			if (source && source !== target && move && !source.forceSwitchFlag) {
-				this.damage(source.baseMaxhp / 10, source, source, this.dex.items.get('lifeorb'));
+		// After using a move...
+		onSourceAfterMove(source, target, move) {
+			
+			// If it hit no targets...
+			if(source && move && !move.hitTargets?.length) {
 
-				
+				// Boost the user's attack by 1 stage
+				// Mimicking line 1809 of Pokemon.ts
+				source.battle.boost({atk: 1}, source, source, source.getItem());
 			}
-		},
-
-		// Mimics Weakness Policy
-		boosts: {
-			atk: 1,
 		},
 		
 		num: -102,
